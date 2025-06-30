@@ -1,25 +1,19 @@
 const mongoose = require('mongoose');
 
 const adminSchema = mongoose.Schema({
-    name: {
-        type:String,
-        minLength:3,
-        trim:true
+    fullname: {
+        type: String,
+        minLength: 3,
+        trim: true
     },
-    phon: Number,
     email: String,
     password: String,
     products: {
         type: Array,
         default: []
     },
-    picture: {
-        type: Array,
-        default: []
-    },
-    price:string,
-    gstin:string,
-
+    picture: String,
+    gstin: String,
 })
 
 module.exports = mongoose.model("admin", adminSchema)
