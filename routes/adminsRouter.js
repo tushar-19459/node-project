@@ -3,9 +3,17 @@ const router = express.Router()
 const adminModel = require('../models/admin-model')
 
 router.get('/', (req, res) => {
-    console.log("this is admin")
+    // console.log("this is admin")
     res.send("admin")
 })
+
+router.get("/adminpanel",(req,res)=>{
+    success = req.flash("success")
+    res.render('createproducts',{success})
+})
+
+
+
 
 //the fuction runs only in development env 
 if (process.env.NODE_ENV === "development") {
